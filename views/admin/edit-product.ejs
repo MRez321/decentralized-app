@@ -51,7 +51,6 @@
 
             <% if (editing) { %>
                 <input type="hidden" name="productId" value="<%= product.id %>">
-                <input type="hidden" name="createdAt" value="<%= product.createdAt.toISOString().slice(0, 19).replace(' ', 'T') %>">
             <% } %>
 
             <button type="submit">

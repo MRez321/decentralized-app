@@ -1,24 +1,22 @@
 const path = require('path');
 
 const express = require('express');
-// const { title } = require('process');
 
 const adminController = require('../controllers/admin');
 
-const Router = express.Router();
+const router = express.Router();
 
+// all these routes have /admin in front of them
+router.get('/add-product', adminController.getAddProduct);
 
-// all these routes have /admin infront of them
-Router.get('/products', adminController.getProducts);
+router.post('/add-product', adminController.postAddProduct);
 
-Router.get('/add-product', adminController.getAddProduct);
+router.get('/products', adminController.getProducts);
 
-Router.post('/add-product', adminController.postAddProduct);
+router.get('/edit-product/:productId', adminController.getEditProduct);
 
-Router.get('/edit-product/:productId', adminController.getEditProduct);
+router.post('/edit-product', adminController.postEditProduct);
 
-Router.post('/edit-product', adminController.postEditProduct);
+router.post('/delete-product', adminController.postDeleteProduct);
 
-Router.post('/delete-product', adminController.postDeleteProduct);
-
-module.exports = Router;
+module.exports = router;
