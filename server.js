@@ -63,7 +63,8 @@ app.use(errorController.get404);
 
 // app.listen(port, () => console.log(`Server running on Port ${port}`, `=> http://localhost:${port}/`));
 
-mongoose.connect(process.env.MONGO_DB)
+// mongoose.connect(process.env.MONGO_DB)
+mongoose.connect(`${process.env.MONGO_DB}`)
 .then(result => {
     console.log('connected to mongodb');
 
