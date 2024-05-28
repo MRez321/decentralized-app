@@ -268,3 +268,27 @@ form {
 .centered {
     text-align: center;
 }
+
+
+
+.user-message {
+    margin: auto;
+    width: 90%;
+    padding: .75rem;
+    border: solid 1px rgb(93, 93, 226);
+    border-radius: 4px;
+    background: #b9c9ff;
+    text-align: center;
+}
+.user-message-error {
+    border-color: crimson;
+    background: #f39a9a;
+    color: red;  
+}
+
+@media (min-width: 768px) {
+    .user-message {
+        width: 30rem;
+    }
+
+}

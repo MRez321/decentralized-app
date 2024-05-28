@@ -16,7 +16,7 @@
             <div class="user-message user-message-error"><%= errorMessage %></div>
         <% } %>
 
-        <form action="/login" method="POST" class="login-form">
+        <form action="/reset" method="POST" class="login-form">
             <div class="form-control">
                 <label for="email">E-Mail</label>
                 <input 
@@ -26,24 +26,10 @@
                 >
             </div>
 
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input 
-                    type="password" 
-                    name="password" 
-                    id="password" 
-                >
-            </div>
-
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn">Reset Password</button>
         </form>
-
-        <div class="centered">
-            <a href="/reset">Reset Password</a>
-        </div>
-
     </main>
 
 

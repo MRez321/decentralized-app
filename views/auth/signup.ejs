@@ -11,6 +11,11 @@
 
 
     <main>
+        <% console.log(errorMessage, ' <= ejs'); %>
+        <% if (errorMessage) { %>
+            <div class="user-message user-message-error"><%= errorMessage %></div>
+        <% } %>
+
         <form action="/signup" method="POST" class="login-form">
             <div class="form-control">
                 <label for="email">E-Mail</label>
@@ -37,6 +42,8 @@
                     id="confirmPassword" 
                 >
             </div>
+
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
             <button type="submit" class="btn">SignUp</button>
         </form>
