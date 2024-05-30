@@ -15,7 +15,12 @@
             <div class="user-message user-message-error"><%= errorMessage %></div>
         <% } %>
 
-        <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST" class="add-product-form">
+        <form 
+            action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" 
+            method="POST" 
+            class="add-product-form"
+            enctype="multipart/form-data"
+        >
             <div class="form-control">
                 <label for="f-title">Product Title</label>
                 <input 
@@ -27,7 +32,7 @@
                 >
             </div>
 
-            <div class="form-control">
+            <!-- <div class="form-control">
                 <label for="imageUrl">Image URL</label>
                 <input 
                     class="<%= validationErrors.find(e => e.path === 'imageUrl') ? 'invalid' : '' %>"
@@ -36,6 +41,15 @@
                     id="imageUrl" 
                     value="<% if (editing || hasError) { %> <%=product.imageUrl%> <% } %>"
                 >
+            </div> -->
+            <div class="form-control">
+                <label for="image">Image</label>
+                <input 
+                    type="file" 
+                    name="image" 
+                    id="image" 
+                >
+                <span>supported file formats: PNG, JPG, JPEG</span>
             </div>
 
             <div class="form-control">
